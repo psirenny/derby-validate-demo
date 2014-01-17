@@ -1,0 +1,17 @@
+<connectionAlert:>
+  {#unless equal($connection.state, 'connected')}
+  <div class="alert alert-warning">
+    <div class="container">
+      {#if equal($connection.state, 'stopped')}
+      Unable to reconnect – <a x-bind="click: reload"><i class="fa fa-refresh"></i> Reload</a>
+      {else}
+      {sentenceCase($connection.state)} –&sp;
+      {#if :self.hideReconnect}
+      <i class="fa fa-refresh fa-spin"></i> Reconnecting…
+      {else}
+      <a x-bind="click: reconnect"><i class="fa fa-refresh"></i> Reconnect</a>
+      {/}
+      {/}
+    </div>
+  </div>
+  {/}

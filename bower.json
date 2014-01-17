@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "psirenny <djtorres0@gmail.com>"
+  ],
+  "dependencies": {
+    "bootstrap": "*",
+    "fastclick": "*",
+    "font-awesome": "*"
+  },
+  "keywords": [
+    "derby",
+    "validation"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT",
+  "name": "derby-validate-demo",
+  "private": true,
+  "version": "0.1.0"
+}

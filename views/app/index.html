@@ -1,0 +1,47 @@
+<import: src="./403">
+<import: src="./404">
+<import: src="./500">
+<import: src="./home">
+
+<Scripts:>
+  <script src="/shared/bower_components/fastclick/lib/fastclick.js"></script>
+  <script>$(function(){FastClick.attach(document.body);});</script>
+
+<Header:>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/shared/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/shared/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <ui:connectionAlert>
+  <header class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><i class="fa fa-user"></i> Derby Validate</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <app:navitem href="/" title="Home">
+        </ul>
+      </div>
+    </div>
+  </header>
+
+<Footer:>
+  <hr>
+  <div class="container">
+    <div id="footer">
+      <p class="text-muted credit">
+        Derby Validate {{$config.version}} · <a href="{{$config.repository.url}}"><i class="fa fa-github"></i> GitHub Project</a>
+      </p>
+    </div>
+  </div>
+
+<navitem:>
+  <li class="{{#if equal($url, @href)}}active{{/}}">
+    <a href="{{@href}}">{{@title}}</a>
+  </li>

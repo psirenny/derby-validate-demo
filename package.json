@@ -1,0 +1,36 @@
+{
+  "author": "psirenny <djtorres0@gmail.com>",
+  "dependencies": {
+    "bower": "*",
+    "connect-mongo": "~0.3.2",
+    "convict": "*",
+    "derby": "0.5.x",
+    "derby-ui-github-buttons": "*",
+    "derby-validate": "*",
+    "express": "~3.2.5",
+    "livedb-mongo": "~0.2.0",
+    "racer-browserchannel": "~0.1.0",
+    "redis": "~0.8.3"
+  },
+  "description": "Demo site for Derby Validate.",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "name": "derby-validate-demo",
+  "private": true,
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/psirenny/derby-validate-demo.git"
+  },
+  "version": "0.1.0",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "derby",
+    "validate"
+  ],
+  "license": "MIT"
+}
