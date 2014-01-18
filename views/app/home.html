@@ -25,6 +25,11 @@
             <input id="field" class="form-control" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
           </div>
           {/}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" checked="{.validate}"> Enable validation
+            </label>
+          </div>
           <button class="btn btn-primary" type="submit">Validate</button>&sp;
           <button class="btn btn-default" type="reset" x-bind="click: form.reset">Reset</button>
         </form>
