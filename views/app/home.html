@@ -12,3 +12,111 @@
       <ghbtns:button count="true" giturl="{{$config.repository.url}}" type="follow" width="180">
     </div>
   </div>
+  <div class="container">
+    {#with _page.form}
+    <div class="row">
+      <div class="col-sm-4">
+        {#with .data}
+        <form role="form" x-bind="submit: event">
+          <h2>Data</h2>
+          {#with .field}
+          <div class="form-group">
+            <label for="field">Field</label>
+            <input id="field" class="form-control" type="text" value="{.value}" x-bind="blur: event, keypress: event">
+          </div>
+          {/}
+          <button class="btn btn-default" type="submit">Validate</button>
+        </form>
+        {/}
+      </div>
+      <div class="col-sm-4">
+        {#with .schema}
+        <form role="form">
+          <h2>Schema</h2>
+          {#with .field}
+          <div class="form-group">
+            <label for="usernameMinimumLength">Minimum Length</label>
+            <input id="usernameMinimumLength" class="form-control" type="number" value="{.minimumLength}">
+          </div>
+          <div class="form-group">
+            <label for="usernameMaximumLength">Maximum Length</label>
+            <input id="usernameMaximumLength" class="form-control" type="number" value="{.maximumLength}">
+          </div>
+          <div class="checkbox">
+            <label>
+              <input checked="{.alphanumeric}" type="checkbox"> Alphanumeric
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input checked="{.required}" type="checkbox"> Required
+            </label>
+          </div>
+          {/}
+        </form>
+        {/}
+      </div>
+      <div class="col-sm-4">
+        {#with .rules}
+        <form class="form" role="form">
+          <h2>Rules</h2>
+          {#with .field.keypress}
+          <div class="form-group">
+            <label class="control-label">Keypress</label>
+            <div class="col-sm-12">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.minimumLength}"> Minimum Length
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.maximumLength}"> Maximum Length
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.alphanumeric}"> Alphanumeric
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.required}"> Required
+                </label>
+              </div>
+            </div>
+          </div>
+          {/}
+          {#with .field.blur}
+          <div class="form-group">
+            <label class="control-label">Blur</label>
+            <div class="col-sm-12">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.minimumLength}"> Minimum Length
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.maximumLength}"> Maximum Length
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.alphanumeric}"> Alphanumeric
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="{.required}"> Required
+                </label>
+              </div>
+            </div>
+          </div>
+          {/}
+        </form>
+        {/}
+      </div>
+    </div>
+    {/}
+  </div>

@@ -10,7 +10,8 @@
     "express": "~3.2.5",
     "livedb-mongo": "~0.2.0",
     "racer-browserchannel": "~0.1.0",
-    "redis": "~0.8.3"
+    "redis": "~0.8.3",
+    "validator": "*"
   },
   "description": "Demo site for Derby Validate.",
   "engines": {
