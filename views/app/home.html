@@ -20,12 +20,12 @@
         <form role="form" x-bind="submit: event">
           <h2>Data</h2>
           {#with .field}
-          <div class="form-group{#if .messages.0} has-error{/}{#unless .errors.0} has-success{/}">
-            <label class="control-label" for="field">{#if .messages.0}{.}{else}Field{/}</label>
+          <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+            <label class="control-label" for="field">{#with .messages}{#if .0}{msg(., _page.form.schema)}{else}Field{/}{/}</label>
             <input id="field" class="form-control" type="text" value="{.value}" x-bind="blur: event, keypress: event">
           </div>
           {/}
-          <button class="btn btn-default" type="submit">Validate</button>
+          <button class="btn btn-primary" type="submit">Validate</button>
         </form>
         {/}
       </div>
