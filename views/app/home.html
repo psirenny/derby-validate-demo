@@ -17,16 +17,16 @@
     <div class="row">
       <div class="col-sm-4">
         {#with .data}
-        <form role="form" x-bind="submit: form.event">
+        <form role="form" x-bind="submit: $validate.form.event">
           <h2>Data</h2>
           {#with .field}
           <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
             <label class="control-label" for="field">{#with .messages}{#if .0}{msg(., _page.form.schema)}{else}Field{/}{/}</label>
-            <input id="field" class="form-control" type="text" value="{.value}" x-bind="blur: form.event, keypress: form.event">
+            <input id="field" class="form-control" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
           </div>
           {/}
           <button class="btn btn-primary" type="submit">Validate</button>&sp;
-          <button class="btn btn-default" type="reset" x-bind="click: form.reset">Reset</button>
+          <button class="btn btn-default" type="reset" x-bind="click: $validate.form.reset">Reset</button>
         </form>
         {/}
       </div>
