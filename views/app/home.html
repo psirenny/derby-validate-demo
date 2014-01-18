@@ -4,7 +4,7 @@
 <Body:>
   <div class="jumbotron">
     <div class="container">
-      <h1><i class="fa fa-user"></i> Derby Validate</h1>
+      <h1><i class="fa fa-check"></i> Derby Validate</h1>
       <p>A validation library for <a href="http://derbyjs.com">Derby JS</a>.</p>
       <p><a class="btn btn-primary btn-lg" role="button" href="{{$config.repository.url}}"><i class="fa fa-github"></i> View on GitHub</a></p>
       <ghbtns:button count="true" giturl="{{$config.repository.url}}" type="watch" width="90">
@@ -20,8 +20,8 @@
         <form role="form" x-bind="submit: event">
           <h2>Data</h2>
           {#with .field}
-          <div class="form-group">
-            <label for="field">Field</label>
+          <div class="form-group{#if .messages.0} has-error{/}{#unless .errors.0} has-success{/}">
+            <label class="control-label" for="field">{#if .messages.0}{.}{else}Field{/}</label>
             <input id="field" class="form-control" type="text" value="{.value}" x-bind="blur: event, keypress: event">
           </div>
           {/}
@@ -35,20 +35,20 @@
           <h2>Schema</h2>
           {#with .field}
           <div class="form-group">
-            <label for="usernameMinimumLength">Minimum Length</label>
+            <label class="control-label" for="usernameMinimumLength">Minimum Length</label>
             <input id="usernameMinimumLength" class="form-control" type="number" value="{.minimumLength}">
           </div>
           <div class="form-group">
-            <label for="usernameMaximumLength">Maximum Length</label>
+            <label class="control-label" for="usernameMaximumLength">Maximum Length</label>
             <input id="usernameMaximumLength" class="form-control" type="number" value="{.maximumLength}">
           </div>
           <div class="checkbox">
-            <label>
+            <label class="control-label">
               <input checked="{.alphanumeric}" type="checkbox"> Alphanumeric
             </label>
           </div>
           <div class="checkbox">
-            <label>
+            <label class="control-label">
               <input checked="{.required}" type="checkbox"> Required
             </label>
           </div>
